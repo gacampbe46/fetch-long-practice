@@ -33,5 +33,23 @@ const getProducts = async () => {
 
 
 /* ============================== Phase 3 ============================== */
+const getProducts = async () => {
+    const res = await fetch('/products', {
+        method: 'POST',
+        headers: {'Content-Type': "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+            name: "Caribbean Delight Coffee",
+            description: "Made by Manatee Coffee",
+            price: 11.99,
+            categories: "grocery"
+          })
+    });
+    console.log(res.status);
 
+    console.log('response header', res.headers.get('Content-Type'));
+
+    console.log(res.url);
+
+    console.log(res.redirected);
+}
 // Your code here
